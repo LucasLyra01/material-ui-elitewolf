@@ -1,7 +1,7 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import InputLabel from "@material-ui/core/InputLabel";
 // core components
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
@@ -17,7 +17,10 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 // @material-ui/icons
 import VpnKey from "@material-ui/icons/VpnKey";
 
-import avatar from "assets/img/faces/marc.jpg";
+import acsa from "assets/img/faces/acsa.jpeg";
+import ana from "assets/img/faces/ana.jpg";
+import lucas from "assets/img/faces/lucas.jpeg";
+import vinicius from "assets/img/faces/vinicius.jpg";
 
 const styles = {
   cardCategoryWhite: {
@@ -45,14 +48,26 @@ export default function UserProfile() {
   return (
     <div>
       <GridContainer>
-        <GridItem xs={12} sm={12} md={8}>
+        <GridItem xs={12} sm={12} md={12}>
           <Card>
             <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>Edit Profile</h4>
-              <p className={classes.cardCategoryWhite}>Complete your profile</p>
+              <h4 className={classes.cardTitleWhite}>Editar Perfil</h4>
+              <p className={classes.cardCategoryWhite}>Edite seu cadastro</p>
             </CardHeader>
             <CardBody>
               <GridContainer>
+                <GridItem xs={12} sm={12} md={5}>
+                <CustomInput
+                    labelText="Company (disabled)"
+                    id="company-disabled"
+                    formControlProps={{
+                      fullWidth: true,
+                    }}
+                    inputProps={{
+                      disabled: true,
+                    }}
+                  />
+                </GridItem>
                 <GridItem xs={12} sm={12} md={5}>
                   <CustomInput
                     labelText="Company (disabled)"
@@ -94,7 +109,7 @@ export default function UserProfile() {
                     }}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
+                <GridItem xs={12} sm={12} md={6}>
                   <CustomInput
                     labelText="With material Icons"
                     id="material"
@@ -120,90 +135,84 @@ export default function UserProfile() {
                   />
                 </GridItem>
               </GridContainer>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="City"
-                    id="city"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Country"
-                    id="country"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Postal Code"
-                    id="postal-code"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
-              </GridContainer>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={12}>
-                  <InputLabel style={{ color: "#AAAAAA" }}>About me</InputLabel>
-                  <CustomInput
-                    labelText="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
-                    id="about-me"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                    inputProps={{
-                      multiline: true,
-                      rows: 5,
-                    }}
-                  />
-                </GridItem>
-              </GridContainer>
             </CardBody>
             <CardFooter>
               <Button color="success">Update Profile</Button>
             </CardFooter>
           </Card>
         </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
+      </GridContainer>
+      <GridContainer>
+        <GridItem xs={12} sm={12} md={3}>
           <Card profile>
             <CardAvatar profile>
               <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                <img src={avatar} alt="..." />
+                <img src={acsa} alt="..." />
               </a>
             </CardAvatar>
             <CardBody profile>
+              {/* Acsa Lourencio Alves */}
               <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
-              <h4 className={classes.cardTitle}>Alec Thompson</h4>
+              <h4 className={classes.cardTitle}>Acsa Lourencio Alves</h4>
               <p className={classes.description}>
-                Don{"'"}t be scared of the truth because we need to restart the
-                human foundation in truth And I love you like Kanye loves Kanye
-                I love Rick Owens’ bed design but the back is...
+                Desenvolvedora Front-end e especialista de UX/UI
               </p>
               <Button color="primary" round>
                 Follow
               </Button>
             </CardBody>
           </Card>
+        </GridItem>
+        <GridItem xs={12} sm={12} md={3}>
           <Card profile>
             <CardAvatar profile>
               <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                <img src={avatar} alt="..." />
+                <img src={ana} alt="..." />
               </a>
             </CardAvatar>
             <CardBody profile>
               <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
-              <h4 className={classes.cardTitle}>Alec Thompson</h4>
+              <h4 className={classes.cardTitle}>Ana Clara Herbst</h4>
               <p className={classes.description}>
-                Don{"'"}t be scared of the truth because we need to restart the
-                human foundation in truth And I love you like Kanye loves Kanye
-                I love Rick Owens’ bed design but the back is...
+                Desenvolvedora Front-end e especialista de UX/UI
+              </p>
+              <Button color="primary" round>
+                Follow
+              </Button>
+            </CardBody>
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={12} md={3}>
+          <Card profile>
+            <CardAvatar profile>
+              <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                <img src={lucas} alt="..." />
+              </a>
+            </CardAvatar>
+            <CardBody profile>
+              <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
+              <h4 className={classes.cardTitle}>Lucas Lacerda Lyra</h4>
+              <p className={classes.description}>
+                Desenvolvedor Back-end e analista de sistemas web
+              </p>
+              <Button color="primary" round>
+                Follow
+              </Button>
+            </CardBody>
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={12} md={3}>
+          <Card profile>
+            <CardAvatar profile>
+              <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                <img src={vinicius} alt="..." />
+              </a>
+            </CardAvatar>
+            <CardBody profile>
+              <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
+              <h4 className={classes.cardTitle}>Vinicius Ludiger Ramos</h4>
+              <p className={classes.description}>
+                Desenvolvedor Back-end e analista de sistemas web
               </p>
               <Button color="primary" round>
                 Follow
